@@ -1,0 +1,35 @@
+{% extends './modelo.html' %}
+
+{% block title %}
+<title>PetsApp: Inicio</title>
+{% endblock %}
+
+{% block body %}
+<div class="row">
+    <div class="col-md-4 offset-md-4">
+    <h2>Editar Mascota</h2>
+        <div class="card">
+            <div class="card-body" style="width: fit-content;">
+            <form action="/editarMascota/" method="POST"> {% csrf_token %}
+                    <div class="form-group">
+                        <h5>Mascota</h5>
+                        <input type="text" id="txtEspecie" name="txtEspecie" value="{{mascota.especie}}" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <h5>Datos</h5>
+                        <input type="text" id="txtDatos" name="txtDatos" value="{{mascota.datos}}" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <h5>Nombre</h5>
+                        <input type="text" id="txtNombre" name="txtNombre" value="{{mascota.datos}}" class="form-control">
+                    </div>
+                    <div class="container py-3 px-0">
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-success btn-block">Guardar</button>
+                        </div>
+                    </div>
+            </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
